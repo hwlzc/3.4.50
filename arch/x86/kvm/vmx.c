@@ -354,6 +354,8 @@ struct nested_vmx {
 	struct page *apic_access_page;
 };
 
+/* 此结构每vcpu一个，与kvm_vcpu绑定一起,在vmx_create_vcpu时分配
+ * 通过contain_of来访问vmx */
 struct vcpu_vmx {
 	struct kvm_vcpu       vcpu;
 	unsigned long         host_rsp;
